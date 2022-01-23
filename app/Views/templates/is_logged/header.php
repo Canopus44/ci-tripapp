@@ -33,8 +33,15 @@
             </ul>
 
             <div class="col-md-3 text-end">
-                <a href="<?= base_url(route_to('login')) ?>" type="button" class="btn btn-outline-primary me-2">Login</a>
-                <a href="<?= base_url(route_to('register')) ?>" type="button" class="btn btn-primary">Sign-up</a>
+                <?php 
+                if (!$is_logged) {
+                    echo '<a href="' . base_url(route_to('login')) . '" class="btn btn-outline-primary me-2">Login</a>';
+                    echo '<a href="' . base_url(route_to('register')) . '" class="btn btn-primary">Sign-up</a>';
+                } else {
+                    echo '<a href="' . base_url(route_to('logout')) . '" class="btn btn-outline-primary me-2">Logout</a>';
+                }   
+                ?>          
+                
             </div>
         </header>
     </div>

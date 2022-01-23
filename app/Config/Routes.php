@@ -33,6 +33,16 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+// ruta para el login
+$routes->get('/', 'Myth\Auth\Controllers\AuthController::login');
+
+// Rutas de las paginas estaticas, evita que la url tenga informacion
+$routes->get('/home', 'Pages::view/home');
+$routes->get('/features', 'Pages::view/features');
+$routes->get('/pricing', 'Pages::view/pricing');
+$routes->get('/faqs', 'Pages::view/faqs');
+$routes->get('/about', 'Pages::view/about');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
