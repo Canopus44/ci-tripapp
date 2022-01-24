@@ -10,29 +10,20 @@
                 <div class="row">
                     <div class="col-lg p-3">
                         <label>DEPARTAMENTO</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Antioquia</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" aria-label="Default select example" v-model="departamento">
+                            <option v-for="dep in departamentos" v:bind="dep">{{dep}}</option>
                         </select>
                     </div>
                     <div class="col-lg p-3">
-                        <label>ORIENTACION</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Sur-Oeste</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <label>REGION</label>
+                        <select class="form-select" aria-label="Default select example" v-model="region">
+                            <option v-for="reg in regiones" v:bind="reg">{{reg}}</option>
                         </select>
                     </div>
                     <div class="col-lg p-3">
                         <label>MUNICIPIO</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Jardín</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" aria-label="Default select example" v-model="municipio">
+                            <option v-for="mun in municipios" v:bind="muni">{{mun}}</option>
                         </select>
                     </div>
                 </div>

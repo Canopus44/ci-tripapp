@@ -112,7 +112,8 @@ class AuthController extends Controller
 			$this->auth->logout();
 		}
 
-		return redirect()->to(site_url('/'));
+		// return redirect()->to(site_url('/'));
+		return redirect()->to(base_url());
 	}
 
 	//--------------------------------------------------------------------

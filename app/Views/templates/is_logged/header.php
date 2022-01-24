@@ -13,36 +13,42 @@
     <!-- JQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+    <!-- VUE JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script> -->
+    <script src="<?= base_url('assets/js/vue.js') ?>"></script>
+
+
     <title><?= esc($title) ?></title>
 </head>
 
 <body>
-    <div class="container">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-                    <use xlink:href="#bootstrap"></use>
-                </svg>
-            </a>            
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="<?= base_url(route_to('home')) ?>" class="nav-link px-2 link-secondary">Home</a></li>
-                <li><a href="<?= base_url(route_to('features')) ?>" class="nav-link px-2 link-dark">Features</a></li>
-                <li><a href="<?= base_url(route_to('pricing')) ?>" class="nav-link px-2 link-dark">Pricing</a></li>
-                <li><a href="<?= base_url(route_to('faqs')) ?>" class="nav-link px-2 link-dark">FAQs</a></li>
-                <li><a href="<?= base_url(route_to('about')) ?>" class="nav-link px-2 link-dark">About</a></li>
-            </ul>
+    <div id="App">
+        <div class="container">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="<?= base_url(route_to('home')) ?>" class="nav-link px-2 link-secondary">Home</a></li>
+                    <li><a href="<?= base_url(route_to('features')) ?>" class="nav-link px-2 link-dark">Features</a></li>
+                    <li><a href="<?= base_url(route_to('pricing')) ?>" class="nav-link px-2 link-dark">Pricing</a></li>
+                    <li><a href="<?= base_url(route_to('faqs')) ?>" class="nav-link px-2 link-dark">FAQs</a></li>
+                    <li><a href="<?= base_url(route_to('about')) ?>" class="nav-link px-2 link-dark">About</a></li>
+                </ul>
 
-            <div class="col-md-3 text-end" id="control-panel-user">
-                <?php 
-                if (!$is_logged) {
-                    echo '<a href="' . base_url(route_to('login')) . '" class="btn btn-outline-primary me-2">Login</a>';
-                    echo '<a href="' . base_url(route_to('register')) . '" class="btn btn-primary">Sign-up</a>';
-                } else {
-                    echo '<label for="control-panel-user" class="me-2">'.htmlentities($username).'</label>';                                                 
-                    echo '<a href="' . base_url(route_to('logout')) . '" class="btn btn-outline-primary me-2">Logout</a>';
-                }   
-                ?>          
-                
-            </div>
-        </header>
-    </div>
+                <div class="col-md-3 text-end" id="control-panel-user">
+                    <?php
+                    if (!$is_logged) {
+                        echo '<a href="' . base_url(route_to('login')) . '" class="btn btn-outline-primary me-2">Login</a>';
+                        echo '<a href="' . base_url(route_to('register')) . '" class="btn btn-primary">Sign-up</a>';
+                    } else {
+                        echo '<label for="control-panel-user" class="me-2">' . htmlentities($username) . '</label>';
+                        echo '<a href="' . base_url(route_to('logout')) . '" class="btn btn-outline-primary me-2">Logout</a>';
+                    }
+                    ?>
+
+                </div>
+            </header>
+        </div>
