@@ -31,10 +31,11 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Pages::view/home');
 
 // ruta para el login
-$routes->get('/', 'Myth\Auth\Controllers\AuthController::login');
+$routes->get('/', 'AuthController::login');
+$routes->get('/dashboard', 'Dashboard::index');
 
 // Rutas de las paginas estaticas, evita que la url tenga informacion
 $routes->get('/home', 'Pages::view/home');

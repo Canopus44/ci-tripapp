@@ -32,12 +32,13 @@
                 <li><a href="<?= base_url(route_to('about')) ?>" class="nav-link px-2 link-dark">About</a></li>
             </ul>
 
-            <div class="col-md-3 text-end">
+            <div class="col-md-3 text-end" id="control-panel-user">
                 <?php 
                 if (!$is_logged) {
                     echo '<a href="' . base_url(route_to('login')) . '" class="btn btn-outline-primary me-2">Login</a>';
                     echo '<a href="' . base_url(route_to('register')) . '" class="btn btn-primary">Sign-up</a>';
                 } else {
+                    echo '<label for="control-panel-user" class="me-2">'.htmlentities($username).'</label>';                                                 
                     echo '<a href="' . base_url(route_to('logout')) . '" class="btn btn-outline-primary me-2">Logout</a>';
                 }   
                 ?>          
