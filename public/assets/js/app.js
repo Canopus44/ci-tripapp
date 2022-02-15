@@ -1,4 +1,5 @@
-//
+//Inicio para scripts de otras extenciones para
+
 
 // Fin espacio para scrips de otras extenciones
 

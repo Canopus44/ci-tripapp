@@ -98,7 +98,7 @@
         </div>
       </div>
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
+        <h1 class="h2">Agregar Sitio</h1>
         <!-- <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -113,7 +113,7 @@
 
       <!-- <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="956" height="403" style="display: block; width: 956px; height: 403px;"></canvas> -->
 
-      <h2>User info</h2>
+      <h2>Cliente info</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm table-info-users" id="table-info-users">
           <thead>

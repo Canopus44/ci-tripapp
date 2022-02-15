@@ -37,6 +37,10 @@ $routes->get('/', 'Pages::view/home');
 $routes->get('/', 'AuthController::login');
 $routes->get('/dashboard', 'Dashboard::index');
 
+// rutas para panel de administracion
+$routes->get('/clientes', 'Cliente::index');
+$routes->get('/agregar_sitio', 'AgregarSitio::index');
+
 // Rutas de las paginas estaticas, evita que la url tenga informacion
 $routes->get('/home', 'Pages::view/home');
 $routes->get('/features', 'Pages::view/features');

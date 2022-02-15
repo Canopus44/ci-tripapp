@@ -113,7 +113,7 @@
 
       <!-- <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="956" height="403" style="display: block; width: 956px; height: 403px;"></canvas> -->
 
-      <h2>User info</h2>
+      <h2>Cliente info</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm table-info-users" id="table-info-users">
           <thead>

@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 
-class Dashboard extends BaseController
+class AgregarSitio extends BaseController
 {
 
     public function index()
@@ -23,7 +23,7 @@ class Dashboard extends BaseController
 
             // Ingresa a la vista de administrador
             echo view('templates/admin_is_logged/header', $data);
-            echo view('pages/admin_dashboard', $data);
+            echo view('pages/agregar_sitio', $data);
             echo view('templates/admin_is_logged/footer', $data);
 
         } else {
