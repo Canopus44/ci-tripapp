@@ -1,6 +1,6 @@
+//
 
-
-
+// Fin espacio para scrips de otras extenciones
 
 // Metodos y Funciones en VUE para contenido dinamico en la vista
 var app = new Vue({

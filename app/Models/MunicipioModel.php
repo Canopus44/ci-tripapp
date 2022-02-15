@@ -2,17 +2,17 @@
 
 use CodeIgniter\Model;
 
-class TouristicplaceModel extends Model
+class MunicipioModel extends Model
 {
-    protected $table      = 'lugarturistico';
-    protected $primaryKey = 'IdLugarTuristico';
+    protected $table      = 'municipios';
+    protected $primaryKey = 'id';
 
     protected $useAutoIncrement = true;
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['IdMunLug', 'Nombre', 'Descripcion', 'img1', 'img2', 'img3', 'img4', 'img5'];        
+    protected $allowedFields = ['nombre','region','c_digo_dane_del_departamento','departamento','c_digo_dane_del_municipio'];        
 
     protected $useTimestamps = false;
     protected $createdField  = 'created_at';
@@ -53,5 +53,4 @@ class TouristicplaceModel extends Model
         $query = $this->db->query('select * from ' . $this->table);
         return $query->getResult();
     }
-
 }
