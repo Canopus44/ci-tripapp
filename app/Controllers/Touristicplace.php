@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\DepartamentsModel;
 
-class Dashboard extends BaseController
+class Touristicplace extends BaseController
 {
 
     public function index()
@@ -27,5 +27,11 @@ class Dashboard extends BaseController
             echo view('pages/dashboard', $data);
             echo view('templates/is_logged/footer', $data);
         }
+    }
+    
+    public function insertInfo(){
+        //make a controller in php that will insert the information in the database
+
+        
     }
 }

@@ -2,7 +2,7 @@
 
 use CodeIgniter\Model;
 
-class DepartamentsModel extends Model
+class TouristicplaceModel extends Model
 {
-    
+
 }

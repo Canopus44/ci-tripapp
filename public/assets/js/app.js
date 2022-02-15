@@ -1,3 +1,8 @@
+
+
+
+
+// Metodos y Funciones en VUE para contenido dinamico en la vista
 var app = new Vue({
   el: "#App",
   data: {
