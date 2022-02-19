@@ -3,17 +3,24 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\MunicipioModel;
+use App\Models\TouristicplaceModel;
 
 class AgregarSitio extends BaseController
 {
 
     public function index()
     {
-        $data['title'] = 'Dashboard';
-        $data['company'] = 'TripApp';
-        $data['is_logged'] = true;
-        $data['username'] = user()->username;
 
+        $data = [
+            'title' => 'Agregar Dashboard Turistico',
+            'company' => 'TripApp',
+            'is_logged' => true,
+            'username' => user()->username,
+            'listMunicipios' => $this->ListMunicipios(),            
+        ];   
+
+        
 
         if ($data['username'] == 'admin' || $data['username'] == 'admin2') {
             
@@ -32,4 +39,12 @@ class AgregarSitio extends BaseController
             echo view('templates/is_logged/footer', $data);
         }
     }
+
+    private function ListMunicipios(){
+        $MunicipioModel = new MunicipioModel();
+        $data = $MunicipioModel->get_all_data();
+        // return json_encode($data);
+        return $data;
+    }
+
 }

@@ -113,36 +113,62 @@
 
       <!-- <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="956" height="403" style="display: block; width: 956px; height: 403px;"></canvas> -->
 
-      <h2>Cliente info</h2>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm table-info-users" id="table-info-users">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Email</th>
-              <th scope="col">Username</th>
-              <th scope="col">Active</th>
-              <th scope="col">Created at</th>
-              <th scope="col">Update at</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            foreach ($users as $user) {
-            ?>
-              <tr>
-                <td><?php echo $user->id; ?></td>
-                <td><?php echo $user->email; ?></td>
-                <td><?php echo $user->username; ?></td>
-                <td><?php echo $user->active; ?></td>
-                <td><?php echo $user->created_at; ?></td>
-                <td><?php echo $user->updated_at; ?></td>
-              </tr>
-            <?php
-            }
-            ?>
-          </tbody>
-        </table>
+      <!-- <h2>Cliente info</h2> -->
+      <div>
+        <form role="form" action="<?php echo base_url(); ?>/touristicplace/insertData" method="post" enctype="multipart/form-data">
+        
+          <div class="group">
+            <div class="form-group half mb-3">
+              <label for="exampleInputName" class="form-control-label"><span class="required-label">*</span> Nombre</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Name" name="nombre">
+            </div>
+            <div class="form-group half mb-3">
+              <label for="exampleInputEmail" class="form-control-label"><span class="required-label">*</span> Seleccione Municipio</label>
+              <select class="form-select" aria-label="Default select example" name="municipio">
+                <?php
+                    foreach ($listMunicipios as $key => $municipio) {
+                        echo '<option value="'.$municipio->id.'">'.$municipio->nombre.'</option>';
+                    }
+                ?>
+                <!-- <option selected>Open this select menu</option> -->
+                <!-- <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option> -->
+              </select>
+            </div>
+            <div class="form-group half mb-3">
+              <label for="exampleInputEmail" class="form-control-label"><span class="required-label">*</span> Ubicación</label>
+              <input type="text" class="form-control" id="exampleInputEmail" name="scriptGoogle" placeholder="Ingrese Script de Google">
+            </div>
+            <div class="form-group half mb-3">
+              <label for="exampleInputEmail" class="form-control-label"><span class="required-label">*</span> Video Youtube</label>
+              <input type="text" class="form-control" id="exampleInputEmail" name="scriptYoutube" placeholder="Ingrese Script de Youtube">
+            </div>
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupFile01">Imagen #1</label>
+              <input type="file" class="form-control" id="inputGroupFile01" name="inputGroupFile01">
+            </div>
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupFile01">Imagen #2</label>
+              <input type="file" class="form-control" id="inputGroupFile02" name="inputGroupFile02">
+            </div>
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupFile01">Imagen #3</label>
+              <input type="file" class="form-control" id="inputGroupFile03" name="inputGroupFile03">
+            </div>
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupFile01">Imagen #4</label>
+              <input type="file" class="form-control" id="inputGroupFile04" name="inputGroupFile04">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputComment">Descripción</label>
+            <textarea id="exampleInputComment" class="form-control" rows="10" cols="80" name=""></textarea>
+          </div>
+          
+          <input type="submit" class="btn btn-warning mt-3" value="Guardar"></input>
+        </form>
+        
       </div>
     </main>
   </div>

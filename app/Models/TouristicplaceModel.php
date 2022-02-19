@@ -12,7 +12,7 @@ class TouristicplaceModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['IdMunLug', 'Nombre', 'Descripcion', 'img1', 'img2', 'img3', 'img4', 'img5'];        
+    protected $allowedFields = ['IdMunLug', 'Nombre', 'Descripcion', 'img1', 'img2', 'img3', 'img4', 'video','ubicacion'];        
 
     protected $useTimestamps = false;
     protected $createdField  = 'created_at';
