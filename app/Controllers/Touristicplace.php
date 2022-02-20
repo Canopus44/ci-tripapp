@@ -41,24 +41,26 @@ class Touristicplace extends BaseController
         $data = $this->request->getPost();
         // var_dump($data);
 
-        $data['municipio'] = intval($this->request->getPost('municipio'));
-        
         $files = $this->request->getFiles();
-        $imgs = $this->encodeImagesBase64($files);
+        $data = $this->uploadImages($files, $data);
 
-        $cnt = count($imgs);
+        $dataToInsert = [
+            'IdMunLug' => intval($this->request->getPost('IdMunLug')),
+            'Nombre' => $data['nombre'],
+            'Descripcion' => $data['descripcion'],
+            'img1' => $data['img1'],
+            'img2' => $data['img2'],
+            'img3' => $data['img3'],
+            'img4' => $data['img4'],
+            'video' => $data['video'],
+            'ubicacion' => $data['ubicacion'],
+        ];
 
-        for ($i=0; $i < $cnt ; $i++) { 
-            $data["img".$i+1] = $imgs[$i];
-        }
-        echo "<pre>";
-        var_dump($data);
-        echo "</pre>";
+        $touristicPlaceModel->insert_data($dataToInsert);
+        
+        // Se carga la vista 
+         return redirect()->back()->withInput();
 
-
-        $img_deco = base64_decode($data['img3']);
-        echo "<img src='data:image/png;base64,".$img_deco."'>";
-        // $touristicPlaceModel->insert_data($data);
         // echo json_encode($data);
     }
 
@@ -89,5 +91,19 @@ class Touristicplace extends BaseController
         return $imagesEncoded;
     }
 
+    private function uploadImages($files, $data)
+    {
+        $countFiles = count($files);
+        $count = 1;
+        foreach ($files as $img) {
+            if ($img->isValid() && !$img->hasMoved()) {
+                $newName = $img->getRandomName();
+                $img->move(ROOTPATH . 'public/uploads', $newName);
 
+                $data['img' . $count] = $newName;
+                $count++;
+            }
+        }
+        return $data;
+    }
 }

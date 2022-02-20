@@ -25,7 +25,7 @@ class UserModel extends Model
         'password_hash' => 'required',
     ];
     protected $validationMessages = [];
-    protected $skipValidation = false;
+    protected $skipValidation = true;
 
     protected $afterInsert = ['addToGroup'];
 
@@ -35,7 +35,7 @@ class UserModel extends Model
      *
      * @var int|null
      */
-    protected $assignGroup;
+    protected $assignGroup = null;
 
     /**
      * Logs a password reset attempt for posterity sake.
@@ -84,7 +84,7 @@ class UserModel extends Model
     {
         $group = $this->db->table('auth_groups')->where('name', $groupName)->get()->getFirstRow();
 
-        $this->assignGroup = $group->id;
+        // $this->assignGroup = $group->id;
 
         return $this;
     }

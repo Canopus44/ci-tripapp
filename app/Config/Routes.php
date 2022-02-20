@@ -40,6 +40,7 @@ $routes->get('/dashboard', 'Dashboard::index');
 // rutas para panel de administracion
 $routes->get('/clientes', 'Cliente::index');
 $routes->get('/agregar_sitio', 'AgregarSitio::index');
+$routes->get('/lista_sitios', 'ListaSitios::index');
 
 // Rutas de las paginas estaticas, evita que la url tenga informacion
 $routes->get('/home', 'Pages::view/home');

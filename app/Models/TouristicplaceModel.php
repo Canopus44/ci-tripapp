@@ -1,4 +1,6 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use CodeIgniter\Model;
 
@@ -12,7 +14,7 @@ class TouristicplaceModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['IdMunLug', 'Nombre', 'Descripcion', 'img1', 'img2', 'img3', 'img4', 'video','ubicacion'];        
+    protected $allowedFields = ['IdMunLug', 'Nombre', 'Descripcion', 'img1', 'img2', 'img3', 'img4', 'video', 'ubicacion'];
 
     protected $useTimestamps = false;
     protected $createdField  = 'created_at';
@@ -54,4 +56,11 @@ class TouristicplaceModel extends Model
         return $query->getResult();
     }
 
+    public function get_all_data_fx()
+    {
+        $query = $this->db->query('SELECT LUGT.IdLugarTuristico ,LUGT.Nombre AS sitio , MUN.nombre AS municipio, MUN.region, MUN.departamento 
+        FROM municipios MUN, lugarturistico LUGT
+        WHERE LUGT.IdMunLug = MUN.id');
+        return $query->getResult();
+    }
 }
