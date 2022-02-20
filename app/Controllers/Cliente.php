@@ -3,16 +3,20 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\CustomersModel;
 
 class Cliente extends BaseController
 {
 
     public function index()
     {
-        $data['title'] = 'Dashboard';
-        $data['company'] = 'TripApp';
-        $data['is_logged'] = true;
-        $data['username'] = user()->username;
+        $data = [
+            'title' => 'Agregar Dashboard Turistico',
+            'company' => 'TripApp',
+            'is_logged' => true,
+            'username' => user()->username,
+            'listClientes' => $this->ListClientes(),            
+        ]; 
 
 
         if ($data['username'] == 'admin' || $data['username'] == 'admin2') {
@@ -31,5 +35,12 @@ class Cliente extends BaseController
             echo view('pages/dashboard', $data);
             echo view('templates/is_logged/footer', $data);
         }
+    }
+
+    private function ListClientes(){
+        $CustomersModel = new CustomersModel();
+        $data = $CustomersModel->findAll();
+        // return json_encode($data);
+        return $data;
     }
 }

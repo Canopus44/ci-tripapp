@@ -5,25 +5,25 @@
         <table class="table table-striped table-sm table-info-users" id="table-info-users">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
               <th scope="col">Email</th>
-              <th scope="col">Username</th>
-              <th scope="col">Active</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">Mensaje</th>
               <th scope="col">Created at</th>
               <th scope="col">Update at</th>
             </tr>
           </thead>
           <tbody>
             <?php
-            foreach ($users as $user) {
+            foreach ($listClientes as $cliente) {
             ?>
               <tr>
-                <td><?php echo $user->id; ?></td>
-                <td><?php echo $user->email; ?></td>
-                <td><?php echo $user->username; ?></td>
-                <td><?php echo $user->active; ?></td>
-                <td><?php echo $user->created_at; ?></td>
-                <td><?php echo $user->updated_at; ?></td>
+                <td><?php echo $cliente['nombre']; ?></td>
+                <td><?php echo $cliente['email']; ?></td>
+                <td><?php echo $cliente['telefono']; ?></td>
+                <td><?php echo $cliente['mensaje']; ?></td>
+                <td><?php echo $cliente['created_at']; ?></td>
+                <td><?php echo $cliente['updated_at']; ?></td>
               </tr>
             <?php
             }
