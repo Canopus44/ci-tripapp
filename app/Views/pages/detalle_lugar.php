@@ -16,7 +16,8 @@
             <h3><?php echo $infoLugar[0]->Nombre ?></h3>
         </div> </br>
         <div class="col">
-            <p class="lead"><?php echo $infoLugar[0]->Descripcion ?></p>
+            <label class ="lead  mb-2">Descripcion: </label> 
+            <p class="lead mt-6"><?php echo $infoLugar[0]->Descripcion ?></p>
         </div>
 
         <div class="col">
@@ -55,7 +56,7 @@
             <!-- Fin Carrusel de imagenes -->
 
             </br>
-            <div width="300" height="400">
+            <div width="100%">
                 <?php
                 if (!empty($infoLugar[0]->video)) {
                     echo $infoLugar[0]->video;

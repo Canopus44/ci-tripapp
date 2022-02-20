@@ -12,10 +12,10 @@
 
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="<?= base_url(route_to('home')) ?>" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="<?= base_url(route_to('features')) ?>" class="nav-link px-2 text-muted">Features</a></li>
+      <!-- <li class="nav-item"><a href="<?= base_url(route_to('features')) ?>" class="nav-link px-2 text-muted">Features</a></li>
       <li class="nav-item"><a href="<?= base_url(route_to('pricing')) ?>" class="nav-link px-2 text-muted">Pricing</a></li>
       <li class="nav-item"><a href="<?= base_url(route_to('faqs')) ?>" class="nav-link px-2 text-muted">FAQs</a></li>
-      <li class="nav-item"><a href="<?= base_url(route_to('about')) ?>" class="nav-link px-2 text-muted">About</a></li>
+      <li class="nav-item"><a href="<?= base_url(route_to('about')) ?>" class="nav-link px-2 text-muted">About</a></li> -->
     </ul>
   </footer>
 </div>
