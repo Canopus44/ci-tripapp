@@ -21,14 +21,15 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
 
-    <link href="<?= base_url('assets/css/styles.css') ?>" rel="stylesheet" />
+    <link href="<?= base_url('assets/css/styles.css') ?> " rel="stylesheet" />
+    <!-- <link href="<?= base_url('assets/css/Lugares.css') ?> " rel="stylesheet" /> -->
+    <link href="<?= base_url('assets/css/album.css') ?> " rel="stylesheet" />
 
 
     <title><?= esc($title) ?></title>
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
 
         <div class="container">

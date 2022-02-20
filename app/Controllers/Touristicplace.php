@@ -3,9 +3,45 @@
 namespace App\Controllers;
 
 use App\Models\TouristicplaceModel;
+use App\Models\UserModel;
 
 class Touristicplace extends BaseController
 {
+
+    public function verLugar()
+    {
+
+        $data = [
+            'title' => 'Agregar Dashboard Turistico',
+            'company' => 'TripApp',
+            'is_logged' => true,
+            'username' => user()->username,                      
+        ];
+        
+        $data['infoLugar'] = $this->getDataById();
+
+        // var_dump($data);
+
+        if ($data['username'] == 'admin' || $data['username'] == 'admin2') {
+            
+            //cargamos toda la informacion de los usuarios
+            $userModel = new UserModel();
+            $data['users'] = $userModel->get_all_data();
+
+            // Ingresa a la vista de administrador
+            echo view('templates/admin_is_logged/header', $data);
+            echo view('pages/agregar_sitio', $data);
+            echo view('templates/admin_is_logged/footer', $data);
+
+        } else {
+
+
+
+            echo view('templates/is_logged/header', $data);
+            echo view('pages/detalle_lugar', $data);
+            echo view('templates/is_logged/footer', $data);
+        }
+    }
 
 
     public function create()
@@ -106,4 +142,14 @@ class Touristicplace extends BaseController
         }
         return $data;
     }
+
+
+    public function getDataById()
+    {
+        $TouristicplaceModel = new TouristicplaceModel();
+        $data = $TouristicplaceModel->get_data_by_id($this->request->getPost('IdLugarTuristico'));
+        return $data;
+    }
+
+
 }

@@ -11554,7 +11554,7 @@ form{
 }
 
 .masthead2 {
-  padding-top: calc(4rem + 74px);
+  padding-top: calc(-1rem + 74px);
   padding-bottom: 2rem;
 }
 

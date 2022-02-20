@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\TouristicplaceModel;
 
 class Dashboard extends BaseController
 {
@@ -27,9 +28,19 @@ class Dashboard extends BaseController
             echo view('templates/admin_is_logged/footer', $data);
 
         } else {
+            $data['listLugares'] = $this->ListLugares();
+
             echo view('templates/is_logged/header', $data);
             echo view('pages/dashboard', $data);
             echo view('templates/is_logged/footer', $data);
         }
     }
+    private function listLugares()
+    {
+        $TouristicplaceModel = new TouristicplaceModel();
+        $data = $TouristicplaceModel->get_all_data();
+        // return json_encode($data);
+        return $data;
+    }
+
 }

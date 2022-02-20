@@ -63,4 +63,11 @@ class TouristicplaceModel extends Model
         WHERE LUGT.IdMunLug = MUN.id');
         return $query->getResult();
     }
+    public function get_data_by_id($id)
+    {
+        $query = $this->db->query("select * from " . $this->table ." where IdLugarTuristico = " . $id);
+        return $query->getResult();
+    }
+
+    
 }

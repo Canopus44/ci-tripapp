@@ -1,8 +1,8 @@
         <!-- Masthead-->
         <header class="masthead text text-center">
-		 <img class="masthead mb-1" src="<?= base_url('assets/assets/img/Fondo.jpg') ?> " alt="..." width="100%"/>	
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
+                <img class="masthead mb-1" src="<?= base_url('assets/assets/img/Fondo.jpg') ?> " alt="..." width="100%" style="z-index: -1; "/>	
                
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">Bienvenidos a Trip App</h1>
@@ -16,9 +16,9 @@
                 <p class="masthead-subheading font-weight-light mb-0">Busca tu Lugar de viaje y paradas en el camino</p>
             </div>
         </header>
-       
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
+
+                <!-- About Section-->
+                <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
                 <!-- About Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-white">Sobre Nosotros</h2>
@@ -30,8 +30,7 @@
                         diversas páginas web que cuentan con poca información de estos sitios, ya que no existe una página formal que abarque toda la información de 
                         los lugares más visitados, históricos y de agrado para los turistas,  por ende, se hace necesario la creación de un Aplicativo Web que contenga 
                         toda está información, facilitando al usuario el acceso a estos datos.</p></div>
-                </div>
-                             
+                </div>                             
             </div>
         </section>
         <!-- Contact Section-->
@@ -40,11 +39,7 @@
                 <!-- Contact Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contactanos</h2>
                 <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
+              
                 <!-- Contact Section Form-->
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
@@ -55,29 +50,29 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                        <form action="<?php echo base_url(); ?>/customers/insertData" method="post" >
+                        <form id="contactForm" action="<?php echo base_url(); ?>/customers/insertData" method="post"  >
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" name="nombre" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                            <input class="form-control" id="name" name="nombre" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                                 <label for="name">Full name</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                            <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
                                 <label for="email">Email address</label>
                                 <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                             </div>
                             <!-- Phone number input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" name="telefono" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                            <input class="form-control" id="phone" name="telefono" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
                                 <label for="phone">Phone number</label>
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" name="mensaje" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                            <textarea class="form-control" id="message" name="mensaje" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                                 <label for="message">Message</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
@@ -97,11 +92,11 @@
                             <!---->
                             <!-- This is what your users will see when there is-->
                             <!-- an error submitting the form-->
-                            <!-- <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div> -->
+                            <!-- <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error enviando mensaje!</div></div> -->
                             <!-- Submit Button-->
                             <input class="btn btn-primary btn-xl" id="submitButton" type="submit">
                         </form>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> 
