@@ -17,7 +17,9 @@ class ListaSitios extends BaseController
             'company' => 'TripApp',
             'is_logged' => true,
             'username' => user()->username,
-            'listSitios' => $this->ListSitios(),            
+            'listSitios' => $this->ListSitios(), 
+            'listMunicipios' => $this->ListMunicipios(), 
+
         ];           
         
 
@@ -42,6 +44,13 @@ class ListaSitios extends BaseController
     private function ListSitios(){
         $TouristicplaceModel = new TouristicplaceModel();
         $data = $TouristicplaceModel->get_all_data_fx();
+        // return json_encode($data);
+        return $data;
+    }
+
+    private function ListMunicipios(){
+        $MunicipioModel = new MunicipioModel();
+        $data = $MunicipioModel->get_all_data();
         // return json_encode($data);
         return $data;
     }

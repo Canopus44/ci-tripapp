@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 use App\Models\TouristicplaceModel;
+use App\Models\MunicipioModel;
 
 class Dashboard extends BaseController
 {
@@ -14,6 +15,8 @@ class Dashboard extends BaseController
         $data['company'] = 'TripApp';
         $data['is_logged'] = true;
         $data['username'] = user()->username;
+        $data['mensajeError'] = 'Seleccione un metodo de filtro';
+        $data['listMunicipios'] = $this->ListMunicipios();
 
 
         if ($data['username'] == 'admin' || $data['username'] == 'admin2') {
@@ -39,6 +42,12 @@ class Dashboard extends BaseController
     {
         $TouristicplaceModel = new TouristicplaceModel();
         $data = $TouristicplaceModel->get_all_data();
+        // return json_encode($data);
+        return $data;
+    }
+    private function ListMunicipios(){
+        $MunicipioModel = new MunicipioModel();
+        $data = $MunicipioModel->get_all_data();
         // return json_encode($data);
         return $data;
     }

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,10 +18,14 @@
             padding-top: 5rem;
         }
     </style>
+    <link href="<?= base_url('assets/css/styles.css') ?> " rel="stylesheet" />
+    <link href="<?= base_url('assets/css/Lugares.css') ?> " rel="stylesheet" />
+    <link href="<?= base_url('assets/css/album.css') ?> " rel="stylesheet" />
+
 </head>
 
 <body>
 
-<?= view('App\Auth\_navbar') ?>
+    <?= view('App\Auth\_navbar') ?>
 
-<main role="main" class="container">
+    <main role="main" class="container">

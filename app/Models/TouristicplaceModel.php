@@ -63,6 +63,16 @@ class TouristicplaceModel extends Model
         WHERE LUGT.IdMunLug = MUN.id');
         return $query->getResult();
     }
+
+
+    public function get_all_data_only_ids($id)
+    {
+        $query = $this->db->query("SELECT LUGT.IdLugarTuristico ,LUGT.Nombre AS sitio , MUN.nombre AS municipio, MUN.region, MUN.departamento FROM municipios MUN, lugarturistico LUGT
+        WHERE LUGT.IdMunLug = MUN.id AND LUGT.IdMunLug =$id" );
+        return $query->getResult();
+    }
+
+
     public function get_data_by_id($id)
     {
         $query = $this->db->query("select * from " . $this->table ." where IdLugarTuristico = " . $id);

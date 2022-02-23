@@ -49,7 +49,6 @@ $routes->get('/pricing', 'Pages::view/pricing');
 $routes->get('/faqs', 'Pages::view/faqs');
 $routes->get('/about', 'Pages::view/about');
 
-
 // Rutas para la APIREST que maneja los usuarios
 // $routes->get('/touristicplace', 'Touristicplace::index');
 $routes->resource('touristicplace');

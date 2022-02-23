@@ -7362,7 +7362,7 @@ textarea.form-control-lg {
 }
 
 .mb-1 {
-  margin-bottom: 0.25rem !important;
+  margin-bottom: -5.75rem !important
 }
 
 .mb-2 {
@@ -11557,4 +11557,5 @@ form{
   padding-top: calc(-1rem + 74px);
   padding-bottom: 2rem;
 }
+
 

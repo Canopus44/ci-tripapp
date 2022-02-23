@@ -54,5 +54,6 @@ class Pages extends BaseController
             echo view('pages/' . $page, $data); // Loads "pages/home.php"
             echo view('templates/footer', $data);
         }
-    }    
+    }   
+
 }

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\TouristicplaceModel;
 use App\Models\UserModel;
+use App\Models\MunicipioModel;
 
 class Touristicplace extends BaseController
 {
@@ -15,15 +16,15 @@ class Touristicplace extends BaseController
             'title' => 'Agregar Dashboard Turistico',
             'company' => 'TripApp',
             'is_logged' => true,
-            'username' => user()->username,                      
+            'username' => user()->username,
         ];
-        
+
         $data['infoLugar'] = $this->getDataById();
 
         // var_dump($data);
 
         if ($data['username'] == 'admin' || $data['username'] == 'admin2') {
-            
+
             //cargamos toda la informacion de los usuarios
             $userModel = new UserModel();
             $data['users'] = $userModel->get_all_data();
@@ -32,7 +33,6 @@ class Touristicplace extends BaseController
             echo view('templates/admin_is_logged/header', $data);
             echo view('pages/agregar_sitio', $data);
             echo view('templates/admin_is_logged/footer', $data);
-
         } else {
 
 
@@ -93,9 +93,9 @@ class Touristicplace extends BaseController
         ];
 
         $touristicPlaceModel->insert_data($dataToInsert);
-        
+
         // Se carga la vista 
-         return redirect()->back()->withInput();
+        return redirect()->back()->withInput();
 
         // echo json_encode($data);
     }
@@ -144,12 +144,81 @@ class Touristicplace extends BaseController
     }
 
 
-    public function getDataById()
+    private function getDataById()
     {
         $TouristicplaceModel = new TouristicplaceModel();
         $data = $TouristicplaceModel->get_data_by_id($this->request->getPost('IdLugarTuristico'));
         return $data;
     }
 
+    private function getDataById_fx($id)
+    {
+        $TouristicplaceModel = new TouristicplaceModel();
+        $data = $TouristicplaceModel->get_data_by_id($id);
+        return $data;
+    }
 
+
+    public function filtrar()
+    {
+        $data['title'] = 'Dashboard';
+        $data['company'] = 'TripApp';
+        $data['is_logged'] = true;
+        $data['username'] = user()->username;
+        $data['mensajeError'] = 'Seleccione un metodo de filtro';
+        $data['listMunicipios'] = $this->ListMunicipios();
+
+        if ($data['username'] == 'admin' || $data['username'] == 'admin2') {
+
+            //cargamos toda la informacion de los usuarios
+            $userModel = new UserModel();
+            $data['users'] = $userModel->get_all_data();
+
+            // Ingresa a la vista de administrador
+            echo view('templates/admin_is_logged/header', $data);
+            echo view('pages/admin_dashboard', $data);
+            echo view('templates/admin_is_logged/footer', $data);
+        } else {
+
+
+            // recibimos los valores por post
+            $getPost_ = $this->request->getPost();
+
+            if (!empty($getPost_)) {
+
+                $municipio = $getPost_['municipio'];
+                $data['listLugares'] = $this->listLugaresFilter($municipio);
+                
+            } else {
+                $data['mensajeError'] = 'Debe seleccionar una opción';
+                $data['listLugares'] = $this->ListLugares();
+            }
+
+            echo view('templates/is_logged/header', $data);
+            echo view('pages/dashboard', $data);
+            echo view('templates/is_logged/footer', $data);
+        }
+    }
+    private function listLugares()
+    {
+        $TouristicplaceModel = new TouristicplaceModel();
+        $data = $TouristicplaceModel->get_all_data();
+        // return json_encode($data);
+        return $data;
+    }
+
+    private function listLugaresFilter($id)
+    {
+        $TouristicplaceModel = new TouristicplaceModel();
+        $data = $TouristicplaceModel->get_all_data_only_ids($id);
+        return $data;
+    }
+
+    private function ListMunicipios()
+    {
+        $MunicipioModel = new MunicipioModel();
+        $data = $MunicipioModel->get_all_data();
+        // return json_encode($data);
+        return $data;
+    }
 }

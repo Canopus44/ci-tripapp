@@ -16,7 +16,9 @@
             <h3><?php echo $infoLugar[0]->Nombre ?></h3>
         </div> </br>
         <div class="col">
-            <label class ="lead  mb-2">Descripcion: </label> 
+            <input type="button" class="btn btn-primary m-2" onclick="history.back()" name="volver atrás" value="Volver atrás">
+            <br>
+            <label class="lead  mb-2">Descripcion: </label>
             <p class="lead mt-6"><?php echo $infoLugar[0]->Descripcion ?></p>
         </div>
 

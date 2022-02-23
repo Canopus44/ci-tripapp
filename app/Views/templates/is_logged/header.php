@@ -39,7 +39,8 @@
 
             <div class="container">
 
-                <a class="navbar-brand" href="<?= base_url() ?>">Trip App</a>
+                <!-- <a class="navbar-brand" href="<?= base_url() ?>">Trip App</a> -->
+                <a class="navbar-brand" href="<?php echo base_url(); ?>/touristicplace/backPage">Trip App</a>
 
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
