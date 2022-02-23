@@ -67,6 +67,8 @@
                     <div class="card mb-4 box-shadow">
                         <img class="card-img-top" src="<?php echo $uri_image ?>" alt="Card image cap">
                         <div class="card-body" height="100">
+                            <p class="card-text"><h5><?php echo $lugar->Nombre; ?></h5></p>
+                            <hr>
                             <p class="card-text"><?php echo $lugar->Descripcion; ?></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">

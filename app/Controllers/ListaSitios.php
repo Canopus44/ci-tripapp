@@ -19,9 +19,11 @@ class ListaSitios extends BaseController
             'username' => user()->username,
             'listSitios' => $this->ListSitios(), 
             'listMunicipios' => $this->ListMunicipios(), 
+            'mensajeError' => 'Seleccione un metodo de filtro', 
+            'listLugares' => $this->ListLugares(), 
 
-        ];           
-        
+        ]; 
+        // $data['listLugares'] = $this->ListLugares();
 
         if ($data['username'] == 'admin' || $data['username'] == 'admin2') {
             
@@ -54,5 +56,14 @@ class ListaSitios extends BaseController
         // return json_encode($data);
         return $data;
     }
+
+    private function listLugares()
+    {
+        $TouristicplaceModel = new TouristicplaceModel();
+        $data = $TouristicplaceModel->get_all_data();
+        // return json_encode($data);
+        return $data;
+    }
+
 
 }
